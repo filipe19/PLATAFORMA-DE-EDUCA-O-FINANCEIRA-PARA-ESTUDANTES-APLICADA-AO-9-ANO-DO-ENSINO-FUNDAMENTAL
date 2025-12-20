@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Abas</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial; margin: 0; padding: 20px; background: #f0f0f0; }
+        .tabs { margin-bottom: 20px; }
+        .tab-btn { 
+            padding: 10px 15px; 
+            margin-right: 5px; 
+            background: #ddd; 
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tab-btn.active { background: #1e3a8a; color: white; }
+        .tab-content { display: none; padding: 20px; background: white; border-radius: 5px; }
+        .tab-content.active { display: block; }
+        .glossary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .glossary-item { padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .glossary-item h4 { margin: 0 0 10px 0; color: #1e3a8a; }
+        .glossary-item p { margin: 0; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste de Renderização de Abas</h1>
+    
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('tab1')">Aba 1</button>
+        <button class="tab-btn" onclick="showTab('tab2')">Aba 2</button>
+        <button class="tab-btn" onclick="showTab('tab3')">Aba 3</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <h2>Aba 1 - Glossário</h2>
+        <div id="glossaryContent">⏳ Carregando...</div>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h2>Aba 2 - Dicas</h2>
+        <div id="tipsContent">⏳ Carregando...</div>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <h2>Aba 3 - Profissões</h2>
+        <div id="professionsContent">⏳ Carregando...</div>
+    </div>
+
+    <script>
+        const API = 'http://localhost:8000/api';
+
+        function showTab(tabName) {
+            console.log('showTab chamado com:', tabName);
+            
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+                console.log('✅ Aba', tabName, 'agora visível');
+            } else {
+                console.error('❌ Aba', tabName, 'não encontrada');
+            }
+            
+            // Add active to button
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Página carregada, carregando conteúdo...');
+            
+            try {
+                // Carregar glossário
+                console.log('Buscando glossário...');
+                const glossRes = await fetch(API + '/glossary');
+                const glossary = await glossRes.json();
+                
+                let glossHtml = '<div class="glossary-grid">';
+                Object.keys(glossary).forEach(term => {
+                    glossHtml += `<div class="glossary-item"><h4>${term}</h4><p>${glossary[term]}</p></div>`;
+                });
+                glossHtml += '</div>';
+                
+                document.getElementById('glossaryContent').innerHTML = glossHtml;
+                console.log('✅ Glossário carregado:', Object.keys(glossary).length, 'termos');
+                
+                // Carregar dicas
+                console.log('Buscando dicas...');
+                const tipsRes = await fetch(API + '/tips');
+                const tipsData = await tipsRes.json();
+                
+                let tipsHtml = '<ul>';
+                tipsData.tips.forEach(tip => {
+                    tipsHtml += `<li>${tip}</li>`;
+                });
+                tipsHtml += '</ul>';
+                
+                document.getElementById('tipsContent').innerHTML = tipsHtml;
+                console.log('✅ Dicas carregadas:', tipsData.tips.length);
+                
+                // Carregar profissões
+                console.log('Buscando profissões...');
+                const profRes = await fetch(API + '/professions');
+                const professions = await profRes.json();
+                
+                let profHtml = '<div class="glossary-grid">';
+                Object.keys(professions).forEach(prof => {
+                    const info = professions[prof];
+                    profHtml += `<div class="glossary-item"><h4>${prof}</h4><p><strong>Salário:</strong> R$ ${info.salary_range}</p><p><strong>Formação:</strong> ${info.education}</p></div>`;
+                });
+                profHtml += '</div>';
+                
+                document.getElementById('professionsContent').innerHTML = profHtml;
+                console.log('✅ Profissões carregadas:', Object.keys(professions).length);
+                
+            } catch (error) {
+                console.error('❌ Erro ao carregar dados:', error);
+                alert('Erro: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>

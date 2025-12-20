@@ -1,0 +1,361 @@
+<!-- frontend/index.html -->
+<!--
+🌐 ARQUIVO HTML PRINCIPAL DA PLATAFORMA FINANCEIRA 📚
+
+Este arquivo é a "casa" da nossa aplicação! É aqui que mora toda a interface
+que os estudantes veem e interagem. Pense nele como a "fachada" de uma loja:
+é o que as pessoas veem primeiro e determina toda a experiência do usuário.
+
+🏗️ ESTRUTURA DO HTML:
+1. HEAD: Configurações que o usuário não vê (metadados, links para CSS, fontes)
+2. BODY: Tudo que aparece na tela (formulários, botões, textos, imagens)
+
+🎯 CONCEITOS IMPORTANTES IMPLEMENTADOS:
+- Estrutura semântica (header, main, section, nav)
+- Acessibilidade (labels, alt texts, semantic tags)
+- Responsividade (viewport meta tag, classes CSS responsivas)
+- Navegação por abas (organização de conteúdo)
+- Formulários interativos (inputs, validação, feedback)
+
+🎨 DESIGN THINKING APLICADO:
+- Interface intuitiva para adolescentes
+- Uso de emojis para facilitar compreensão
+- Cores atrativas mas profissionais
+- Feedback visual imediato
+- Microinterações que motivam o uso
+
+Esta página ensina que HTML é muito mais que "fazer sites":
+é sobre criar experiências que transformam vidas! 🚀
+-->
+
+<!doctype html>
+<!-- 📋 Declaração do tipo de documento: HTML5 moderno -->
+
+<html lang="pt-BR">
+<!-- 🌎 Idioma da página em português brasileiro (importante para acessibilidade e SEO) -->
+
+<head>
+    <!-- 🧠 CABEÇA DO DOCUMENTO - Configurações invisíveis mas essenciais -->
+    
+    <meta charset="utf-8" />
+    <!-- 📝 Codificação de caracteres UTF-8 (permite acentos, emojis, caracteres especiais) -->
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- 📱 Configuração responsiva: tela se adapta ao tamanho do dispositivo (mobile, tablet, desktop) -->
+    
+    <title>💰 Meu Futuro Financeiro - Educação Financeira</title>
+    <!-- 🏷️ Título que aparece na aba do navegador - importante para identificação -->
+    
+    <link rel="stylesheet" href="styles.css">
+    <!-- 🎨 Link para arquivo CSS que contém toda a estilização visual -->
+    
+    <!-- 🔤 FONTES DO GOOGLE - Tipografia moderna e profissional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 
+    💡 Por que usar Google Fonts?
+    - Tipografia profissional e legível
+    - Carregamento otimizado
+    - Consistência entre diferentes dispositivos
+    - Inter é uma fonte moderna, limpa e adequada para interfaces digitais
+    -->
+</head>
+
+<body>
+    <!-- 👁️ CORPO DO DOCUMENTO - Tudo que o usuário vê e interage -->
+    
+    <main class="container">
+        <!-- 🏗️ Container principal que organiza todo o conteúdo -->
+        
+        <!-- 🎯 CABEÇALHO HEROICO - Primeira impressão que causa impacto -->
+        <header>
+            <div class="mascot">🎓💰</div>
+            <!-- 😊 Mascote visual: combina educação (🎓) + finanças (💰) = conceito da plataforma -->
+            
+            <h1>Meu Futuro Financeiro</h1>
+            <!-- 📢 Título principal: claro, direto e inspirador -->
+            
+            <p class="subtitle">Aprenda matemática financeira de forma divertida e planeje seu futuro!</p>
+            <!-- 📝 Subtítulo: explica o propósito de forma acessível para adolescentes -->
+            
+            <!-- 📊 ESTATÍSTICAS VISUAIS - Mostram o valor da plataforma -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">📊</span>
+                    <span class="stat-text">Simulações Interativas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">🎯</span>
+                    <span class="stat-text">Metas Personalizadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">💡</span>
+                    <span class="stat-text">Educação Prática</span>
+                </div>
+            </div>
+            <!-- 
+            🧠 PSICOLOGIA DO DESIGN:
+            Estas estatísticas criam confiança e mostram valor antes do usuário começar.
+            É como um "menu" de um restaurante: apresenta o que está disponível.
+            -->
+        </header>
+
+        <!-- 🧭 NAVEGAÇÃO POR ABAS - Organiza conteúdo sem sobrecarregar -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" onclick="showTab('simulacao')">🚀 Simulação</button>
+            <button class="tab-btn" onclick="showTab('metas')">🎯 Metas</button>
+            <button class="tab-btn" onclick="showTab('educacao')">📚 Aprenda</button>
+            <button class="tab-btn" onclick="showTab('profissoes')">💼 Profissões</button>
+        </nav>
+        <!-- 
+        💡 UX DESIGN PRINCIPLES:
+        - Navegação clara e intuitiva
+        - Emojis ajudam na identificação rápida
+        - Classe "active" indica aba atual
+        - onclick conecta com JavaScript para interatividade
+        -->
+
+        <!-- 📋 ABA 1: SIMULAÇÃO - Core da aplicação -->
+        <div id="simulacao" class="tab-content active">
+            
+            <!-- 📝 SEÇÃO: REALIDADE ATUAL -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>📋 Sua Realidade Atual</h2>
+                    <p>Vamos conhecer você melhor para personalizar suas simulações!</p>
+                </div>
+                <!-- 
+                🎯 OBJETIVO PEDAGÓGICO:
+                Coletar dados reais do estudante para fazer simulações relevantes.
+                Ensina a importância de conhecer a própria situação financeira.
+                -->
+                
+                <form id="formReality">
+                    <!-- 📊 LINHA 1: Dados pessoais básicos -->
+                    <div class="form-row">
+                        <input type="text" id="r_nome" placeholder="📝 Seu nome" required />
+                        <input type="number" id="r_idade" placeholder="🎂 Sua idade" min="8" max="120" required />
+                    </div>
+                    
+                    <!-- 💰 LINHA 2: Situação financeira atual -->
+                    <div class="form-row">
+                        <input type="number" id="r_renda" placeholder="💵 Renda atual (R$)" min="0" step="0.01" required />
+                        <input type="number" id="r_renda_futura" placeholder="🎓 Renda possível futura (R$)" min="0" step="0.01" />
+                    </div>
+                    
+                    <!-- 💭 CAMPO: Aspirações profissionais -->
+                    <input type="text" id="r_profissao" placeholder="💭 Profissão que te interessa" />
+                    
+                    <button type="submit" class="btn btn-primary">✅ Salvar Minha Realidade</button>
+                </form>
+                
+                <div id="realityResult" class="result"></div>
+                <!-- 📤 Local onde aparecerão mensagens de sucesso ou erro -->
+            </section>
+
+            <!-- 🔮 SEÇÃO: FUTURO PROFISSIONAL -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>🔮 Planeje Seu Futuro</h2>
+                    <p>Vamos simular como seus sonhos podem se tornar realidade!</p>
+                </div>
+                <!-- 
+                🎓 CONCEITO EDUCATIVO:
+                Esta seção ensina planejamento financeiro de longo prazo.
+                Conecta sonhos com ações práticas (poupança + tempo + juros).
+                -->
+                
+                <form id="formFuture">
+                    <!-- 👤 LINHA 1: Identificação -->
+                    <div class="form-row">
+                        <input type="text" id="f_nome" placeholder="📝 Seu nome" required />
+                        <input type="number" id="f_idade" placeholder="🎂 Sua idade" min="8" max="120" required />
+                    </div>
+                    
+                    <!-- 💼 LINHA 2: Aspirações profissionais -->
+                    <div class="form-row">
+                        <input type="text" id="f_profissao" placeholder="💼 Profissão dos seus sonhos" required />
+                        <input type="number" id="f_faixa" placeholder="💰 Salário esperado (R$/mês)" min="0" step="0.01" required />
+                    </div>
+                    
+                    <!-- 📊 LINHA 3: Parâmetros de investimento -->
+                    <div class="form-row">
+                        <input type="number" id="f_poupanca" placeholder="💸 Quanto consegue poupar por mês? (R$)" min="0" step="0.01" required />
+                        <input type="number" id="f_tempo" placeholder="⏰ Por quantos anos? (anos)" min="1" max="100" required />
+                    </div>
+                    
+                    <!-- 🎯 SEÇÃO: Perfil de investimento -->
+                    <div class="investment-options">
+                        <label>🎯 Escolha seu perfil de investimento:</label>
+                        <select id="f_tipo">
+                            <option value="conservador">🛡️ Conservador (Poupança/Renda Fixa) - Menor risco</option>
+                            <option value="moderado">⚖️ Moderado (Fundos Diversos) - Risco equilibrado</option>
+                            <option value="arriscado">🚀 Arriscado (Ações) - Maior potencial, maior risco</option>
+                        </select>
+                    </div>
+                    <!-- 
+                    📚 EDUCAÇÃO FINANCEIRA:
+                    Este select ensina sobre a relação risco x retorno:
+                    - Conservador: seguro mas retorno baixo
+                    - Moderado: equilibrio entre segurança e crescimento  
+                    - Arriscado: potencial alto mas volatilidade alta
+                    -->
+                    
+                    <button type="submit" class="btn btn-secondary">🔥 Ver Minhas Projeções!</button>
+                </form>
+
+                <div id="futureResult" class="result"></div>
+                <!-- 📊 Aqui aparecerão os gráficos e tabelas de projeção -->
+            </section>
+        </div>
+
+        <!-- 🎯 ABA 2: CALCULADORA DE METAS -->
+        <div id="metas" class="tab-content">
+            <section class="card">
+                <div class="card-header">
+                    <h2>🎯 Calculadora de Metas</h2>
+                    <p>Descubra quanto tempo você precisa para realizar seus sonhos!</p>
+                </div>
+                
+                <!-- 💡 SEÇÃO: Exemplos de metas comuns -->
+                <div class="goal-examples">
+                    <h3>💭 Exemplos de metas:</h3>
+                    <div class="goal-buttons">
+                        <button type="button" onclick="setGoal(3000, 'Notebook para estudos')">💻 Notebook (R$ 3.000)</button>
+                        <button type="button" onclick="setGoal(15000, 'Curso superior')">🎓 Curso (R$ 15.000)</button>
+                        <button type="button" onclick="setGoal(50000, 'Carro')">🚗 Carro (R$ 50.000)</button>
+                        <button type="button" onclick="setGoal(100000, 'Casa própria (entrada)')">🏠 Casa (R$ 100.000)</button>
+                    </div>
+                </div>
+                <!-- 
+                🧠 PSICOLOGIA COMPORTAMENTAL:
+                Exemplos concretos ajudam estudantes a visualizar objetivos tangíveis.
+                Valores progressivos (3k → 100k) mostram diferentes horizontes de tempo.
+                -->
+                
+                <form id="goalForm">
+                    <!-- 💰 INPUTS: Parâmetros da meta -->
+                    <div class="form-row">
+                        <input type="number" id="goal_amount" placeholder="💰 Valor da sua meta (R$)" min="1" step="0.01" required />
+                        <input type="number" id="monthly_saving" placeholder="💸 Quanto pode poupar por mês? (R$)" min="1" step="0.01" required />
+                    </div>
+                    
+                    <!-- 📈 CONTROLE: Taxa de juros interativa -->
+                    <div class="form-row">
+                        <label for="annual_rate">📈 Taxa de juros anual (%):</label>
+                        <input type="range" id="annual_rate" min="0" max="15" value="5" step="0.5" oninput="updateRateDisplay()" />
+                        <span id="rateDisplay">5.0%</span>
+                    </div>
+                    <!-- 
+                    🎓 INTERATIVIDADE EDUCATIVA:
+                    O slider permite explorar como diferentes taxas impactam o tempo.
+                    Feedback visual imediato ensina causa-efeito de forma intuitiva.
+                    -->
+                    
+                    <button type="submit" class="btn btn-primary">🚀 Calcular Minha Meta!</button>
+                </form>
+                
+                <div id="goalResult" class="result"></div>
+            </section>
+        </div>
+
+        <!-- 📚 ABA 3: CONTEÚDO EDUCATIVO -->
+        <div id="educacao" class="tab-content">
+            <section class="card">
+                <div id="glossaryContent"></div>
+                <!-- 📖 Conteúdo carregado dinamicamente via JavaScript -->
+            </section>
+            <section class="card">
+                <div id="tipsContent"></div>
+                <!-- 💡 Dicas práticas carregadas do backend -->
+            </section>
+        </div>
+
+        <!-- 💼 ABA 4: ORIENTAÇÃO VOCACIONAL -->
+        <div id="profissoes" class="tab-content">
+            <section class="card">
+                <div id="professionsContent"></div>
+                <!-- 💼 Informações sobre carreiras carregadas dinamicamente -->
+            </section>
+        </div>
+
+        <!-- 🦶 RODAPÉ - Informações institucionais -->
+        <footer>
+            <div class="footer-content">
+                <p>🎓 Plataforma de Educação Financeira para Estudantes do 9º Ano</p>
+                <p>Desenvolvido para promover inclusão financeira e planejamento de futuro</p>
+                <div class="footer-links">
+                    <span>📊 Simulações Reais</span>
+                    <span>🎯 Metas Personalizadas</span>
+                    <span>💡 Educação Prática</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- ⚡ SCRIPTS JAVASCRIPT -->
+    
+    <!-- 🔧 Script inline para funcionalidades básicas -->
+    <script>
+        // 🧭 FUNÇÃO: Navegação entre abas
+        function showTab(tabName) {
+            console.log(`🔄 Alternando para aba: ${tabName}`);
+            
+            // 👁️ Esconde todas as abas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 🎨 Remove destaque de todos os botões
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // ✅ Mostra a aba selecionada
+            document.getElementById(tabName).classList.add('active');
+            
+            // 🎨 Destaca o botão ativo
+            event.target.classList.add('active');
+        }
+
+        // 🎯 FUNÇÃO: Define meta pré-selecionada
+        function setGoal(amount, description) {
+            console.log(`🎯 Meta selecionada: ${description} - R$ ${amount}`);
+            
+            document.getElementById('goal_amount').value = amount;
+            
+            // 🎨 Feedback visual temporário
+            const input = document.getElementById('goal_amount');
+            input.style.backgroundColor = '#e8f5e8';
+            setTimeout(() => input.style.backgroundColor = '', 1000);
+        }
+
+        // 📊 FUNÇÃO: Atualiza display da taxa de juros
+        function updateRateDisplay() {
+            const rate = document.getElementById('annual_rate').value;
+            document.getElementById('rateDisplay').textContent = rate + '%';
+        }
+    </script>
+    
+    <script src="app.js"></script>
+    <!-- 📂 Script principal com toda a lógica de comunicação com backend -->
+</body>
+</html>
+
+<!-- 
+🎉 CONCLUSÃO DIDÁTICA:
+
+Este arquivo HTML demonstra que criar interfaces não é apenas sobre "tags e códigos":
+é sobre EXPERIÊNCIA HUMANA! Cada elemento foi pensado para:
+
+🎯 ENGAJAR: Emojis, cores, microanimações
+🎓 EDUCAR: Explicações claras, exemplos práticos  
+⚡ FUNCIONAR: Código semântico, acessível, responsivo
+💡 INSPIRAR: Conectar sonhos com ações concretas
+
+A verdadeira magia acontece quando TECNOLOGIA encontra EDUCAÇÃO encontra PSICOLOGIA!
+Este projeto ensina que programar é sobre resolver problemas REAIS de pessoas REAIS. 🚀
+
+Próximo passo: Explore o app.js para ver como tudo ganha vida com JavaScript!
+-->

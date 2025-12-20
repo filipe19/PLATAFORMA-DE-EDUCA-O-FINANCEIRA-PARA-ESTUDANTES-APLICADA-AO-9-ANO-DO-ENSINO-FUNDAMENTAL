@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>💰 Meu Futuro Financeiro - Educação Financeira</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div class="mascot">🎓💰</div>
+            <h1>Meu Futuro Financeiro</h1>
+            <p class="subtitle">Aprenda matemática financeira de forma divertida e planeje seu futuro!</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">📊</span>
+                    <span class="stat-text">Simulações Interativas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">🎯</span>
+                    <span class="stat-text">Metas Personalizadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">💡</span>
+                    <span class="stat-text">Educação Prática</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" onclick="showTab('simulacao')">🚀 Simulação</button>
+            <button class="tab-btn" onclick="showTab('metas')">🎯 Metas</button>
+            <button class="tab-btn" onclick="showTab('educacao')">📚 Aprenda</button>
+            <button class="tab-btn" onclick="showTab('profissoes')">💼 Profissões</button>
+        </nav>
+
+        <!-- Simulação Tab -->
+        <div id="simulacao" class="tab-content active">
+            <section class="card">
+                <div class="card-header">
+                    <h2>📋 Sua Realidade Atual</h2>
+                    <p>Vamos conhecer você melhor para personalizar suas simulações!</p>
+                </div>
+                <form id="formReality">
+                    <div class="form-row">
+                        <input type="text" id="r_nome" placeholder="📝 Seu nome" required />
+                        <input type="number" id="r_idade" placeholder="🎂 Sua idade" min="8" max="120" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="number" id="r_renda" placeholder="💵 Renda atual (R$)" min="0" step="0.01" required />
+                        <input type="number" id="r_renda_futura" placeholder="🎓 Renda possível futura (R$)" min="0" step="0.01" />
+                    </div>
+                    <input type="text" id="r_profissao" placeholder="💭 Profissão que te interessa" />
+                    <button type="submit" class="btn btn-primary">✅ Salvar Minha Realidade</button>
+                </form>
+                <div id="realityResult" class="result"></div>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <h2>🔮 Planeje Seu Futuro</h2>
+                    <p>Vamos simular como seus sonhos podem se tornar realidade!</p>
+                </div>
+                <form id="formFuture">
+                    <div class="form-row">
+                        <input type="text" id="f_nome" placeholder="📝 Seu nome" required />
+                        <input type="number" id="f_idade" placeholder="🎂 Sua idade" min="8" max="120" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="f_profissao" placeholder="💼 Profissão dos seus sonhos" required />
+                        <input type="number" id="f_faixa" placeholder="💰 Salário esperado (R$/mês)" min="0" step="0.01" required />
+                    </div>
+                    <div class="form-row">
+                        <input type="number" id="f_poupanca" placeholder="💸 Quanto consegue poupar por mês? (R$)" min="0" step="0.01" required />
+                        <input type="number" id="f_tempo" placeholder="⏰ Por quantos anos? (anos)" min="1" max="100" required />
+                    </div>
+                    <div class="investment-options">
+                        <label>🎯 Escolha seu perfil de investimento:</label>
+                        <select id="f_tipo">
+                            <option value="conservador">🛡️ Conservador (Poupança/Renda Fixa) - Menor risco</option>
+                            <option value="moderado">⚖️ Moderado (Fundos Diversos) - Risco equilibrado</option>
+                            <option value="arriscado">🚀 Arriscado (Ações) - Maior potencial, maior risco</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">🔥 Ver Minhas Projeções!</button>
+                </form>
+
+                <div id="futureResult" class="result"></div>
+            </section>
+        </div>
+
+        <!-- Metas Tab -->
+        <div id="metas" class="tab-content">
+            <section class="card">
+                <div class="card-header">
+                    <h2>🎯 Calculadora de Metas</h2>
+                    <p>Descubra quanto tempo você precisa para realizar seus sonhos!</p>
+                </div>
+                <form id="goalForm">
+                    <div class="goal-examples">
+                        <h3>💭 Exemplos de metas:</h3>
+                        <div class="goal-buttons">
+                            <button type="button" onclick="setGoal(3000, 'Notebook para estudos')">💻 Notebook (R$ 3.000)</button>
+                            <button type="button" onclick="setGoal(15000, 'Curso superior')">🎓 Curso (R$ 15.000)</button>
+                            <button type="button" onclick="setGoal(50000, 'Carro')">🚗 Carro (R$ 50.000)</button>
+                            <button type="button" onclick="setGoal(100000, 'Casa própria (entrada)')">🏠 Casa (R$ 100.000)</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <input type="number" id="goal_amount" placeholder="💰 Valor da sua meta (R$)" min="1" step="0.01" required />
+                        <input type="number" id="monthly_saving" placeholder="💸 Quanto pode poupar por mês? (R$)" min="1" step="0.01" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="annual_rate">📈 Taxa de juros anual (%):</label>
+                        <input type="range" id="annual_rate" min="0" max="15" value="5" step="0.5" oninput="updateRateDisplay()" />
+                        <span id="rateDisplay">5.0%</span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">🚀 Calcular Minha Meta!</button>
+                </form>
+                <div id="goalResult" class="result"></div>
+            </section>
+        </div>
+
+        <!-- Educação Tab -->
+        <div id="educacao" class="tab-content">
+            <section class="card">
+                <div id="glossaryContent">
+                    <p style="text-align: center; color: #999;">⏳ Carregando glossário...</p>
+                </div>
+            </section>
+            <section class="card">
+                <div id="tipsContent">
+                    <p style="text-align: center; color: #999;">⏳ Carregando dicas...</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Profissões Tab -->
+        <div id="profissoes" class="tab-content">
+            <section class="card">
+                <div id="professionsContent">
+                    <p style="text-align: center; color: #999;">⏳ Carregando profissões...</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>🎓 Plataforma de Educação Financeira para Estudantes do 9º Ano</p>
+                <p>Desenvolvido para promover inclusão financeira e planejamento de futuro</p>
+                <div class="footer-links">
+                    <span>📊 Simulações Reais</span>
+                    <span>🎯 Metas Personalizadas</span>
+                    <span>💡 Educação Prática</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Goal setting helpers
+        function setGoal(amount, description) {
+            document.getElementById('goal_amount').value = amount;
+            // Add visual feedback
+            const input = document.getElementById('goal_amount');
+            input.style.backgroundColor = '#e8f5e8';
+            setTimeout(() => input.style.backgroundColor = '', 1000);
+        }
+
+        function updateRateDisplay() {
+            const rate = document.getElementById('annual_rate').value;
+            document.getElementById('rateDisplay').textContent = rate + '%';
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
