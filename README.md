@@ -1,9 +1,10 @@
 # 💰 Plataforma de Educação Financeira - 9º Ano
 # Autores: 
 # Filipe Alves de Sousa; 
-# Dauany 
-# Tatiane 
-# Jania 
+# Dauany Nitielly Andrade 
+# Tatiane Coelho da Silva 
+# Jania Ferreira de Menezes 
+
 
 ## 🎯 Visão Geral
 
