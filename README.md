@@ -1,6 +1,5 @@
 # Universidade Federal de Catalão (UFCat)
 # Instituto de Matemática e Tecnologia (IMTec)
-# INSTITUTO DE MATEMÁTICA E TECNOLOGIA
 ## LICENCIATURA PLENA EM MATEMÁTICA
 ### Práticas Extensionistas II 
 
