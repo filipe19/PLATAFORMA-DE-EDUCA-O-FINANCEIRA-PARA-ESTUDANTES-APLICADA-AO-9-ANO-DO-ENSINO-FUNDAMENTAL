@@ -1,5 +1,11 @@
-# 💰 Plataforma de Educação Financeira - 9º Ano
-# Autores: 
+# Universidade Federal de Catalão (UFCat)
+# Instituto de Matemática e Tecnologia (IMTec)
+# INSTITUTO DE MATEMÁTICA E TECNOLOGIA
+## LICENCIATURA PLENA EM MATEMÁTICA
+### Práticas Extensionistas II 
+
+# 💰 PLATAFORMA DE EDUCAÇÃO FINANCEIRA PARA ESTUDANTES : APLICADA AO 9º ANO DO ENSINO FUNDAMENTAL
+## Autores: 
 # Filipe Alves de Sousa; 
 # Dauany Nitielly Andrade 
 # Tatiane Coelho da Silva 
