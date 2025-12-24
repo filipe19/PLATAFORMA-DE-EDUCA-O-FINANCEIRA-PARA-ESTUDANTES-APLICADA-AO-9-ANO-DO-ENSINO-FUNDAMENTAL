@@ -4,11 +4,11 @@
 ### Práticas Extensionistas II 
 
 # 💰 PLATAFORMA DE EDUCAÇÃO FINANCEIRA PARA ESTUDANTES : APLICADA AO 9º ANO DO ENSINO FUNDAMENTAL
-## Autores: 
-# Filipe Alves de Sousa; 
-# Dauany Nitielly Andrade 
-# Tatiane Coelho da Silva 
-# Jania Ferreira de Menezes 
+### Autores: 
+## Filipe Alves de Sousa; 
+## Dauany Nitielly Andrade 
+## Tatiane Coelho da Silva 
+## Jania Ferreira de Menezes 
 
 
 ## 🎯 Visão Geral
@@ -318,15 +318,15 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](L
 - **Foco:** Educação financeira para o ensino fundamental
 
 ### 🎯 Objetivo Pedagógico
-Promover **inclusão financeira** e **mobilidade econômica** através da educação, fornecendo aos jovens ferramentas práticas para tomada de decisões financeiras conscientes.
+Promover **inclusão financeira** e **mobilidade econômica** por meio da educação, fornecendo aos jovens ferramentas práticas para tomada de decisões financeiras conscientes.
 
 ---
 
 ## 📞 Contato e Suporte
 
-- 📧 **Email:** [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
-- 💻 **GitHub:** [@seu-usuario](https://github.com/seu-usuario)
-- 🌐 **Demo Online:** [link-para-demo](https://seu-site.com)
+- 📧 **Email:** [seu-email@exemplo.com](mailto:meu-email@exemplo.com)
+- 💻 **GitHub:** [@seu-usuario](https://github.com/filipe19)
+- 🌐 **Demo Online:** [link-para-demo](https://github.com/filipe19)
 
 ---
 
