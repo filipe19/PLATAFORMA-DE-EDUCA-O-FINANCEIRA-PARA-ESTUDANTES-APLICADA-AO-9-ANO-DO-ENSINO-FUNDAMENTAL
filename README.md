@@ -324,8 +324,8 @@ Promover **inclusão financeira** e **mobilidade econômica** por meio da educa�
 
 ## 📞 Contato e Suporte
 
-- 📧 **Email:** [seu-email@exemplo.com](mailto:meu-email@exemplo.com)
-- 💻 **GitHub:** [@seu-usuario](https://github.com/filipe19)
+- 📧 **Email:** [meu_email@exemplo.com](mailto:meu-email@exemplo.com)
+- 💻 **GitHub:** [@meu_github](https://github.com/filipe19)
 - 🌐 **Demo Online:** [link-para-demo](https://github.com/filipe19)
 
 ---
