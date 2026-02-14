@@ -8,7 +8,7 @@
 ## Filipe Alves de Sousa; 
 ## Dauany Nitielly Andrade 
 ## Tatiane Coelho da Silva 
-
+## Jania Ferreira de Menezes 
 
 
 ## 🎯 Visão Geral
